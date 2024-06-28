@@ -2,6 +2,7 @@
   font-size: 1.5rem;
   margin: 0.8rem;
 }
+
 .plugin-space-message {
   display: inline-block;
   font-size: 1.2em;
@@ -11,4 +12,27 @@
 
 .kintone-app-record-headermenu-space {
   padding: 16px 0 0 16px;
+}
+
+.swal2-label-input {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.swal2-label {
+  width: 50%;
+  font-weight: bold;
+}
+
+.swal2-input:not(.swal2-select) {
+  width: 50%;
+  margin: auto;
+  background-color: #d4d7d7;
+}
+
+.swal2-select {
+  width: 100%;
+  margin: auto;
 }

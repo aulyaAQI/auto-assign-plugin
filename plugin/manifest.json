@@ -12,10 +12,17 @@
     "html": "html/config.html",
     "js": ["js/config.js"],
     "css": ["css/51-modern-default.css", "css/config.css"],
-    "required_params": ["referenceApp", "assignmentThresholdField", "threshold", "assigneeField"]
+    "required_params": [
+      "referenceApp",
+      "assignmentThresholdField",
+      "threshold",
+      "assigneeField",
+      "sourceAssignmentDateField",
+      "sourceDedicatedAssigneeField"
+    ]
   },
   "name": {
-    "en": "auto_assign"
+    "en": "Auto Assign"
   },
   "description": {
     "en": "plugin to suggest assignee on kintone's record."

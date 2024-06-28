@@ -112,7 +112,7 @@ function filterUnique(value, index, self) {
 export async function getProcessManagement() {
   const client = new KintoneRestAPIClient();
   const processManagementResp = await client.app.getProcessManagement({
-    app: kintone.app.getId(),
+    app: kintone.mobile.app.getId(),
   });
 
   return processManagementResp;
@@ -129,7 +129,7 @@ export async function getProcessManagement() {
 export async function updateRecordStatus(recordId, actionName, assigneeCode) {
   const client = new KintoneRestAPIClient();
   const updateRecordStatusResp = await client.record.updateRecordStatus({
-    app: kintone.app.getId(),
+    app: kintone.mobile.app.getId(),
     id: recordId,
     action: actionName,
     assignee: assigneeCode,
@@ -225,6 +225,7 @@ export async function decrementComponentReference(
  * @param {Object} normalizedConfig - The normalized configuration object.
  * @returns {Promise<void>} - A promise that resolves when the update is complete.
  */
+
 export async function updateAssignmentDateAndDedicatedAssignee(
   record,
   assigneeCode,
@@ -238,7 +239,7 @@ export async function updateAssignmentDateAndDedicatedAssignee(
 
   const currentDate = DateTime.local().toISODate();
   const updateOpt = {
-    app: kintone.app.getId(),
+    app: kintone.mobile.app.getId(),
     id: recordId,
     record: {
       [sourceAssignmentDateFieldCode]: {
@@ -271,7 +272,7 @@ export async function updateAssignmentDateAndDedicatedAssignee(
 
         try {
           await client.record.updateRecord({
-            app: kintone.app.getId(),
+            app: kintone.mobile.app.getId(),
             id: recordId,
             record: {
               IPD: {
@@ -411,7 +412,6 @@ export async function suggestAssignee(normalizedConfig, record, relatedAction) {
         thisButton.disabled = false;
         return;
       }
-
       Swal.fire({
         title: 'Assigning...',
         didOpen: () => {
@@ -522,7 +522,6 @@ function generateSwalHtml(
   if (isSingleCandidate) {
     dropDowns.disabled = true;
   }
-
   const ddClassList = dropDowns.classList;
   ddClassList.add('swal2-select');
   ddClassList.add('swal2-input');
